@@ -1,17 +1,49 @@
-# 中药拿药编号工具
+# UEWM 中药拿药编号工具
 
-静态网页工具，输入中药名称和克数，输出对应编号和克数。
+内部网页工具，供 [UEWM Clinic](https://www.uewmclinic.com/) 的 intern 根据方子快速查找中药编号并准备拿药。
 
-## 本地打开
+## 网页地址
 
-直接打开 `index.html` 即可使用。
+[https://youhusky.github.io/UEWM-herb-catelog/](https://youhusky.github.io/UEWM-herb-catelog/)
 
-## GitHub Pages 部署
+## 功能
 
-1. 把项目推送到 GitHub 仓库
-2. 在仓库 `Settings > Pages`
-3. `Build and deployment` 选择 `Deploy from a branch`
-4. Branch 选择 `main`（或你实际使用的分支）和 `/ (root)`
-5. 保存后等待发布
+- 支持中文名、拼音和英文别名匹配
+- 支持单味药、多味药和整段方子输入
+- 输出对应药材编号和克数
+- 可在手机浏览器直接使用
 
-发布成功后，页面可以通过 GitHub Pages 链接在手机浏览器直接访问。
+## 使用方式
+
+直接打开 `index.html`，或访问上面的网页地址。
+
+## 适用场景
+
+适用于诊所 intern 在拿药时：
+
+- 根据处方中的药材名称查对应编号
+- 根据编号和克数整理取药清单
+- 在中英文混合处方下减少手工对照错误
+
+---
+
+# UEWM Herb Catalog Tool (English)
+
+An internal web tool for [UEWM Clinic](https://www.uewmclinic.com/) interns to match herbs in prescriptions with catalog codes and dispensing weights.
+
+## Web App
+
+[https://youhusky.github.io/UEWM-herb-catelog/](https://youhusky.github.io/UEWM-herb-catelog/)
+
+## Features
+
+- Supports Chinese names, pinyin, and English aliases
+- Supports single herb input, multiple herbs, or full mixed prescription text
+- Outputs mapped herb code and weight
+- Mobile browser friendly
+
+## Typical Use
+
+- Map herb names in a prescription to internal herb codes
+- Prepare a clear pick list with codes and weights
+- Reduce manual lookup mistakes in bilingual prescriptions
