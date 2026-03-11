@@ -25,6 +25,11 @@
 - 根据编号和克数整理取药清单
 - 在中英文混合处方下减少手工对照错误
 
+## 联系方式
+
+- Email: [youhusky@gmail.com](mailto:youhusky@gmail.com)
+- GitHub: [youhusky/UEWM-herb-catelog](https://github.com/youhusky/UEWM-herb-catelog)
+
 ---
 
 # UEWM Herb Catalog Tool (English)
@@ -47,3 +52,8 @@ An internal web tool for [UEWM Clinic](https://www.uewmclinic.com/) interns to m
 - Map herb names in a prescription to internal herb codes
 - Prepare a clear pick list with codes and weights
 - Reduce manual lookup mistakes in bilingual prescriptions
+
+## Contact
+
+- Email: [youhusky@gmail.com](mailto:youhusky@gmail.com)
+- GitHub: [youhusky/UEWM-herb-catelog](https://github.com/youhusky/UEWM-herb-catelog)

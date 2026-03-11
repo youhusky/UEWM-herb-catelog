@@ -204,3 +204,24 @@
           min-height: 220px;
         }
       }
+
+      .footer {
+        margin-top: 18px;
+        margin-bottom: 28px;
+      }
+
+      .footer-text {
+        margin: 0;
+        padding: 14px 16px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: rgba(255, 250, 242, 0.85);
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .footer-text a {
+        color: var(--accent-strong);
+        font-weight: 600;
+      }
