@@ -14,6 +14,7 @@ let loadedMappingText = DEFAULT_MAPPING;
 let currentSortMode = "default";
 let lastItems = [];
 let lastUnmatched = [];
+// Cache parsed mapping so repeated "Generate" clicks do not rebuild regex/maps.
 let lastParsedMappingText = "";
 let lastParsedMapping = null;
 
@@ -38,6 +39,7 @@ function compareByCodeAsc(a, b) {
   if (!codeA) return 1;
   if (!codeB) return -1;
 
+  // Sort by shelf-like order: letter group first (A..Z), then numeric slot.
   const na = normalizeCodeForSort(codeA);
   const nb = normalizeCodeForSort(codeB);
   if (na.group !== nb.group) return na.group.localeCompare(nb.group);
@@ -98,6 +100,7 @@ function setSortMode(mode) {
 function renderResult() {
   const mappingText = mappingInput.value;
   if (mappingText !== lastParsedMappingText || !lastParsedMapping) {
+    // Only re-parse when mapping source text changes.
     lastParsedMapping = parseMapping(mappingText);
     lastParsedMappingText = mappingText;
   }

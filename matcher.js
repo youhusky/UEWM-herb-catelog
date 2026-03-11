@@ -9,6 +9,7 @@ const traditionalToSimplified = {
 };
 
 export function normalizeName(text) {
+  // Normalize Han characters first so traditional/simplified inputs match the same key.
   const normalizedHan = text.replace(/[\u3400-\u9FFF]/g, (char) => {
     return traditionalToSimplified[char] || char;
   });
@@ -46,6 +47,7 @@ function editDistance(a, b) {
 }
 
 function buildAliasCandidates(aliases) {
+  // Precompute normalized aliases once to avoid repeating work per prescription line.
   return aliases.map((alias) => ({
     alias,
     normalized: normalizeName(alias)
@@ -62,6 +64,7 @@ function findFuzzyAlias(rawName, aliasCandidates, aliasMap) {
   aliasCandidates.forEach(({ normalized }) => {
     const normalizedAlias = normalized;
     if (!normalizedAlias) return;
+    // Fast pruning before Levenshtein distance: keep only close-length, same-leading-char candidates.
     if (Math.abs(normalizedAlias.length - target.length) > 2) return;
     if (firstChar && normalizedAlias[0] !== firstChar) return;
     const distance = editDistance(target, normalizedAlias);
@@ -105,6 +108,7 @@ export function parseMapping(text) {
       const rawCode = csv[1];
       const chinese = csv[2];
       const code = rawCode === "-" ? "" : rawCode.replace(/-/g, "");
+      // Parse simple "aka" hints from notes, e.g. "即大云", "别名: xx", "又叫xx".
       const aliasesFromNotes = csv[3]
         ? (csv[3].match(/(?:即|别名[:：]|又叫)([^,，]+)/g) || [])
             .map((piece) => piece.replace(/^(即|别名[:：]|又叫)/, "").trim())
@@ -144,6 +148,7 @@ export function extractPrescriptionItems(text, aliasMap, aliasCandidates, matche
   }
 
   const items = [];
+  const seenKeys = new Set();
   let match;
 
   while ((match = matcher.exec(text)) !== null) {
@@ -151,8 +156,13 @@ export function extractPrescriptionItems(text, aliasMap, aliasCandidates, matche
     const amount = match[2] ? match[2].trim() : "";
     const name = normalizeName(rawName);
     const mapped = aliasMap.get(name);
+    // Fallback to fuzzy mapping for common IME typos / near-homophone mistakes.
     const fuzzyMapped = mapped || findFuzzyAlias(rawName, aliasCandidates, aliasMap);
     if (!fuzzyMapped) continue;
+
+    const key = `${rawName}|${amount}|${fuzzyMapped.code}`;
+    if (seenKeys.has(key)) continue;
+    seenKeys.add(key);
 
     items.push({
       rawName,
@@ -161,15 +171,47 @@ export function extractPrescriptionItems(text, aliasMap, aliasCandidates, matche
     });
   }
 
-  const unmatched = text
+  const unmatchedRaw = text
     .split(/\n+/)
     .flatMap((line) => line.split(/[，,、；;]+/))
     .map((item) => item.trim())
-    .filter(Boolean)
-    .filter((item) => {
-      const chunkMatcher = new RegExp(matcher.source, "i");
-      return !chunkMatcher.test(item);
+    .filter(Boolean);
+
+  const unmatched = [];
+  const singleChunkPattern = /^(.+?)\s*[:：]?\s*(\d+(?:\.\d+)?)?\s*(?:g|G|克)?$/;
+  const chunkMatcher = new RegExp(matcher.source, "i");
+
+  unmatchedRaw.forEach((chunk) => {
+    if (chunkMatcher.test(chunk)) {
+      return;
+    }
+
+    const parsed = chunk.match(singleChunkPattern);
+    if (!parsed) {
+      unmatched.push(chunk);
+      return;
+    }
+
+    const rawName = parsed[1].trim();
+    const amount = parsed[2] ? parsed[2].trim() : "";
+    const mapped = aliasMap.get(normalizeName(rawName));
+    const fuzzyMapped = mapped || findFuzzyAlias(rawName, aliasCandidates, aliasMap);
+    if (!fuzzyMapped) {
+      unmatched.push(chunk);
+      return;
+    }
+
+    const key = `${rawName}|${amount}|${fuzzyMapped.code}`;
+    if (seenKeys.has(key)) {
+      return;
+    }
+    seenKeys.add(key);
+    items.push({
+      rawName,
+      code: fuzzyMapped.code,
+      amount
     });
+  });
 
   return { items, unmatched };
 }
