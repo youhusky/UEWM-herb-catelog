@@ -1,3 +1,4 @@
+B34, 艾绒 | Ai Rong
 B24, 艾叶 | Ai Ye
 E35, 巴戟天 | 四块瓦 | Ba Ji Tian
 B75, 白附片 | Bai Fu Pian
@@ -26,8 +27,9 @@ D14, 半枝莲 | Ban Zhi Lian
 北杏仁 | Bei Xing Ren
 B74, 荜茇 | Bi Ba
 A35, 萆薢 | Bi Xie
-E66, 萹蓄 | Bian Xu
-A26, 鳖甲 | Bie Jia
+A34, 萹蓄 | Bian Xu
+E66, 鳖甲 | Bie Jia
+A26, 槟榔 | Bin Lang
 C63, 薄荷 | Bo He
 E46, 补骨脂 | Bu Gu Zhi
 C51, 苍耳子 | Cang Er Zi
@@ -49,160 +51,265 @@ D46, 川贝母 | Chuan Bei Mu
 B43, 川楝子 | Chuan Lian Zi
 F55, 川木通 | Chuan Mu Tong
 D71, 川牛膝 | Chuan Niu Xi
-H56, 川芎 | Chuan Xiong
-E25, 大腹皮 | Da Fu Pi
+F25, 川芎 | Chuan Xiong
+F61, 椿根皮 | Chun Gen Pi
+F73, 磁石 | Ci Shi
+B13, 大腹皮 | Da Fu Pi
 A22, 大黄 | Da Huang
 G14, 大青叶 | Da Qing Ye
-C43, 代赭石 | Dai Zhe Shi
-C16, 胆南星 | Dan Nan Xing
-F24, 党参 | Dang Shen
+G43, 代赭石 | Dai Zhe Shi
+C43, 淡豆豉 | Dan Dou Chi
+F24, 丹参 | Dan Shen
+C65, 淡竹叶 | Dan Zhu Ye
+E71, 党参 | Dang Shen
 E72, 当归 | 當歸 | Dang Gui
-F61, 灯心草 | Deng Xin Cao
+A33, 灯心草 | Deng Xin Cao
+G34, 地丁 | Di Ding
+A65, 地附子 | Di Fu Zi
+A52, 地骨皮 | Di Gu Pi
+G51, 地龙 | Di Long
+B56, 地榆 | Di Yu
 B73, 丁香 | Ding Xiang
-E25, 冬瓜子 | Dong Gua Zi
+A75, 冬瓜子 | Dong Gua Zi
 H51, 冬瓜皮 | Dong Gua Pi
-A22, 独活 | Du Huo
+A45, 冬葵子 | Dong Kui Zi
+D31, 独活 | Du Huo
 E64, 杜仲 | Du Zhong
-E66, 莪术 | E Zhu
-A23, 防风 | Fang Feng
-C22, 浮小麦 | Fu Xiao Mai
-A73, 附片 | Fu Zi | Fu Pian
-A15, 甘草 | Gan Cao
-E31, 干姜 | Gan Jiang
-G24, 葛根 | Ge Gen
-F31, 藁本 | Gao Ben
-B23, 钩藤 | Gou Teng
-E24, 瓜蒌 | Gua Lou
-C66, 桂枝 | Gui Zhi
-B51, 海螵蛸 | Hai Piao Xiao
+E52, 阿胶 | E Jiao
+F66, 莪术 | E Zhu
+A23, 番泻叶 | Fan Xie Ye
+C31, 防风 | Fang Feng
+A73, 茯苓 | Fu Ling
+F32, 覆盆子 | Fu Pen Zi
+C15, 浮萍 | Fu Ping
+F62, 茯神 | Fu Shen
+H55, 佛手 | Fu Shou
+F42, 浮小麦 | Fu Xiao Mai
+B65, 附片 | 附子 | Fu Zi | Fu Pian
+E31, 甘草 | Gan Cao
+B53, 干姜 | Gan Jiang
+C72, 葛根 | Ge Gen
+B54, 高良姜 | Gao Liang Jiang
+C22, 藁本 | Gao Ben
+E44, 狗脊 | Gou Ji
+H56, 枸杞 | Gou Qi
+G21, 钩藤 | Gou Teng
+E56, 骨碎补 | Gu Sui Bu
+A16, 谷芽 | Gu Ya
+D24, 瓜蒌 | Gua Lou
+E76, 龟板 | Gui Ban
+C61, 桂枝 | Gui Zhi
+G16, 海风藤 | Hai Feng Teng
+B51, 海浮石 | Hai Fu Shi
+B61, 海蛤壳 | Hai Ge Ke
+G45, 海金沙 | Hai Jin Sha
+F23, 海螵蛸 | Hai Piao Xiao
+D75, 海藻 | Hai Zao
 D12, 海桐皮 | Hai Tong Pi
-A73, 汉防己 | Han Fang Ji
-B45, 墨旱莲 | Han Lian Cao | Mo Han Lian
-E12, 何首乌 | He Shou Wu
-F44, 诃子 | He Zi
+A43, 汉防己 | Han Fang Ji
+E45, 墨旱莲 | Han Lian Cao | Mo Han Lian
+B12, 合欢皮 | He Huan Pi
+E22, 何首乌 | He Shou Wu
+C16, 荷叶 | He Ye
+F41, 诃子 | He Zi
+F46, 红花 | Hong Hua
 红枣 | Hong Zao
-B63, 厚朴 | Hou Po
-C43, 琥珀 | Hu Po
+G42, 厚朴 | Hou Po
+B63, 胡椒 | Hu Jiao
+H45, 琥珀 | Hu Po
+G46, 虎杖 | Hu Zhang
+A54, 滑石 | Hua Shi
 H12, 胡桃仁 | Hu Tao Ren
 B46, 槐花米 | Huai Hua Mi
-B44, 花椒 | Hua Jiao
-C42, 黄柏 | Huang Bai
-E13, 黄连 | Huang Lian
-C12, 黄精 | Huang Jing
-E43, 黄芪 | Huang Qi
-E32, 黄芩 | Huang Qin
-G46, 火麻仁 | Huo Ma Ren
+F45, 怀牛膝 | Huai Niu Xi
+C26, 黄柏 | Huang Bo
+C36, 黄连 | Huang Lian
+E16, 黄精 | Huang Jing
+E51, 黄芪 | Huang Qi
+C46, 黄芩 | Huang Qin
+G62, 火麻仁 | Huo Ma Ren
+G12, 藿香 | Huo Xiang
 H14, 鸡骨草 | Ji Gu Cao
-H24, 鸡内金 | Ji Nei Jin
+A76, 鸡内金 | Ji Nei Jin
 B45, 鸡血藤 | Ji Xue Teng
-C73, 金银花 | Jin Yin Hua
+G56, 姜黄 | Jiang Huang
+D56, 桔梗 | Jie Geng
+H13, 桔红 | Jie Hong
+G55, 金钱草 | Jin Qian Cao
+C76, 金银花 | Jin Yin Hua
+F13, 金樱子 | Jin Ying Zi
+C71, 荆芥 | Jing Jie
 E26, 韭菜子 | Jiu Cai Zi
-G53, 荆芥穗 | Jing Jie Sui
+C64, 菊花 | Ju Hua
+C45, 决明子 | Jue Ming Zi
+G73, 枯矾 | Ku Fan
+A62, 苦参 | Ku Shen
+D35, 款冬花 | Kuan Dong Hua
+E26, 韭菜子 | Jiu Cai Zi
+D73, 昆布 | Kun Bu
 A36, 莱菔子 | Lai Fu Zi
-F32, 莲子 | Lian Zi
+C66, 连翘 | Lian Qiao
+F12, 莲子 | Lian Zi
+E36, 灵芝 | Ling Zhi
 G72, 硫磺 | Liu Huang
-F43, 龙胆草 | Long Dan Cao
-D43, 龙骨 | Long Gu
-C24, 芦根 | Lu Gen
-B32, 鹿角胶 | Lu Jiao Jiao
+C24, 龙胆草 | Long Dan Cao
+F43, 龙骨 | Long Gu
+C34, 芦根 | Lu Gen
+E32, 鹿角胶 | Lu Jiao Jiao
 H52, 刘寄奴 | Liu Ji Nu
 F26, 罗汉果 | Luo Han Guo
-G22, 络石藤 | Luo Shi Teng
+H24, 罗布麻 | Luo Bu Ma
+G26, 络石藤 | Luo Shi Teng
 H33, 路路通 | Lu Lu Tong
+H25, 马齿苋 | Ma Chi Xian
+C11, 麻黄 | Ma Huang
+H46, 麻黄根 | Ma Huang Gen
 D74, 马兜铃 | Ma Dou Ling
-H46, 麦冬 | Mai Dong
+E33, 麦冬 | 麦门冬 | Mai Dong
 H13, 麦芽 | Mai Ya
-G63, 芒硝 | Mang Xiao
+A13, 芒硝 | Mang Xiao
+H34, 玫瑰花 | Mei Gui Hua
+F65, 没药 | Mo Yao
 H42, 密蒙花 | Mi Meng Hua
-D64, 绵萆薢 | Mian Bi Xie
-E73, 牡丹皮 | Mu Dan Pi
-B44, 木瓜 | Mu Gua
-B44, 木香 | Mu Xiang
-E57, 女贞子 | Nu Zhen Zi
-B53, 牛蒡子 | Niu Bang Zi
-G54, 牛膝 | Niu Xi
-G32, 胖大海 | Pang Da Hai
-G23, 佩兰 | Pei Lan
-A33, 蒲公英 | Pu Gong Ying
-D61, 前胡 | Qian Hu
-D73, 秦艽 | Qin Jiao
-B22, 青皮 | Qing Pi
+A61, 牡丹皮 | Mu Dan Pi
+D41, 木瓜 | Mu Gua
+F53, 牡蛎 | Mu Li
+A44, 木香 | Mu Xiang
+A56, 麦芽 | Mai Ya
+B42, 木香 | Mu Xiang
+C13, 木贼 | Mu Zei
+E55, 女贞子 | Nu Zhen Zi
+C74, 牛蒡子 | Niu Bang Zi
+B76, 藕节 | Ou Jie
+G34, 胖大海 | Pang Da Hai
+B53, 炮姜 | Pao Jiang
+G22, 佩兰 | Pei Lan
+D33, 枇杷叶 | Pi Pa Ye
+A31, 蒲公英 | Pu Gong Ying
+G65, 蒲黄 | Pu Huang
+B15, 茜草根 | Qian Cao Gen
+D55, 前胡 | Qian Hu
+D52, 千年健 | Qian Nian Jian
+F22, 芡实 | Qian Shi
+C32, 羌活 | Qiang Huo
+D42, 秦艽 | Qin Jiao
+D72, 秦皮 | Qing Pi
 H41, 青葙子 | Qing Xiang Zi
-B74, 瞿麦 | Qu Mai
-E73, 人参 | Ren Shen
+A11, 青蒿 | Qing Hao
+B21, 青皮 | Qing Pi
+A24, 瞿麦 | Qu Mai
+E73, 人参叶 | Ren Shen Ye
 E25, 肉苁蓉 | 大云 | Rou Cong Rong | Da Yun
 G74, 牵牛子 | 二丑牛 | Qian Niu Zi | Er Chou Niu
-F44, 肉豆蔻 | Rou Dou Kou
-B34, 乳香 | Ru Xiang
-F75, 三棱 | San Leng
-B35, 桑白皮 | Sang Bai Pi
+F51, 肉豆蔻 | Rou Dou Kou
+B44, 肉桂 | Rou Gui
+F75, 乳香 | Ru Xiang
+F56, 三棱 | San Leng
+B55, 三七 | San Qi
+D66, 桑白皮 | Sang Bai Pi
 E74, 桑寄生 | Sang Ji Sheng
-E73, 桑椹 | Sang Shen
-D22, 桑叶 | Sang Ye
+F33, 桑螵蛸 | Sang Piao Xiao
+E75, 桑椹 | Sang Shen
+C73, 桑叶 | Sang Ye
+D21, 桑枝 | Sang Zhi
+G52, 砂仁 | Sha Ren
+E63, 沙参 | Sha Shen
+G15, 沙苑子 | Sha Yuan Zi
+A21, 山豆根 | Shan Dou Gen
 A71, 生地黄 | 生地黃 | 生地 | Sheng Di Huang | Sheng Di
-B63, 砂仁 | Sha Ren
-E63, 山药 | Shan Yao
-A46, 山楂 | Shan Zha
-E43, 蛇床子 | She Chuang Zi
+E41, 山药 | Shan Yao
+A66, 山楂 | Shan Zha
+F11, 山茱萸 | Shan Zhu Yu
+G61, 蛇床子 | She Chuang Zi
+C14, 射干 | She Gan
+D53, 伸筋草 | Shen Jin Cao
+A46, 神曲 | Shen Qu
+A15, 生姜皮 | Sheng Jiang Pi
+C23, 升麻 | Sheng Ma
 F74, 石菖蒲 | Shi Chang Pu
+G54, 十大功劳药 | Shi Da Gong Lao Yao
 C54, 石膏 | Shi Gao
-G34, 石斛 | Shi Hu
+E13, 石斛 | Shi Hu
 G31, 石决明 | Shi Jue Ming
-A47, 石榴皮 | Shi Liu Pi
-G31, 石苇 | Shi Wei
-E53, 熟地黄 | 熟地黃 | 熟地 | Shu Di Huang | Shu Di
+G71, 使君子 | Shi Jun Zi
+A14, 石苇 | Shi Wei
+E62, 熟地黄 | 熟地黃 | 熟地 | Shu Di Huang | Shu Di
+D63, 丝瓜络 | Si Gua Luo
+G36, 苏木 | Su Mu
 F44, 酸枣仁 | Suan Zao Ren
-C55, 水牛角 | Shui Niu Jiao
-G15, 天花粉 | Tian Hua Fen
+E14, 锁阳 | Suo Yang
+C55, 天花粉 | Tian Hua Fen
+G11, 天麻 | Tian Ma
 H53, 太子参 | 太子汤 | Tai Zi Shen | Tai Zi Tang
 E23, 天门冬 | Tian Men Dong
-C53, 天竺黄 | Tian Zhu Huang
+B71, 天南星 | Tian Nan Xing
+G53, 天竺黄 | Tian Zhu Huang
+B31, 葶苈子 | Ting Li Zi
 H31, 通草 | Tong Cao
+D43, 透骨草 | Tou Gu Cao
 G76, 土鳖虫 | Tu Bie Chong
-H32, 土茯苓 | Tu Fu Ling
+A32, 土茯苓 | Tu Fu Ling
 H35, 土槿皮 | Tu Jin Pi
-H45, 菟丝子 | Tu Si Zi
-H46, 瓦楞子 | Wa Leng Zi
-D72, 王不留行 | Wang Bu Liu Xing
-F71, 威灵仙 | Wei Ling Xian
-G66, 五加皮 | Wu Jia Pi
+E65, 菟丝子 | Tu Si Zi
+H44, 瓦楞子 | Wa Leng Zi
+F72, 王不留行 | Wang Bu Liu Xing
+D11, 威灵仙 | Wei Ling Xian
+D51, 五加皮 | Wu Jia Pi
 G66, 五倍子 | Wu Bei Zi
-A53, 乌梅 | Wu Mei
+F31, 乌梅 | Wu Mei
 G75, 五灵脂 | Wu Ling Zhi
 F21, 五味子 | Wu Wei Zi
-B31, 乌药 | Wu Yao
+B62, 乌药 | Wu Yao
 B64, 吴茱萸 | Wu Zhu Yu
 D22, 豨莶草 | Xi Xian Cao
-C61, 薤白 | Xie Bai
+C21, 细辛 | Xi Xin
+H61, 薤白 | Xie Bai
 C35, 夏枯草 | Xia Ku Cao
-B33, 仙鹤草 | Xian He Cao
-E35, 仙茅 | Xian Mao
+B35, 仙鹤草 | Xian He Cao
+E15, 仙茅 | Xian Mao
 B52, 香附 | Xiang Fu
-B12, 香薷 | Xiang Ru
+C12, 香薷 | Xiang Ru
 B72, 小茴香 | Xiao Hui Xiang
 C42, 辛夷花 | Xin Yi Hua
-E32, 徐长卿 | Xu Chang Qing
+D32, 徐长卿 | Xu Chang Qing
+E54, 续断 | Xu Duan
+D23, 旋复花 | Xuan Fu Hua
 A51, 玄参 | Xuan Shen
+F76, 延胡索 | Yan Hu Suo
 H43, 阳起石 | Yang Qi Shi
+F54, 夜交藤 | Ye Jiao Teng
 G24, 野菊花 | Ye Ju Hua
-A54, 益母草 | Yi Mu Cao
-F14, 薏苡仁 | Yi Yi Ren
+F14, 益母草 | Yi Mu Cao
+A74, 薏苡仁 | Yi Yi Ren
+A74, 益智仁 | Yi Zhi Ren
+A72, 银柴胡 | Yin Cai Hu
 A25, 茵陈 | Yin Chen
+E24, 淫羊藿 | Yin Yang Huo
 B75, 禹白附 | Yu Bai Fu
-G34, 郁李仁 | Yu Li Ren
-H23, 玉竹 | Yu Zhu
-E53, 远志 | Yuan Zhi
-A53, 泽兰 | Ze Lan
-A35, 泽泻 | Ze Xie
-E43, 浙贝母 | Zhe Bei Mu
-D61, 珍珠母 | Zhen Zhu Mu
+F34, 郁金 | Yu Jin
+G63, 郁李仁 | Yu Li Ren
+H23, 玉米须 | Yu Mi Xu
+D15, 鱼腥草 | Yu Xing Cao
+E53, 玉竹 | Yu Zhu
+F64, 远志 | Yuan Zhi
+D62, 皂刺 | Zao Ci
+F15, 泽兰 | Ze Lan
+A53, 泽泻 | Ze Xie
+D45, 浙贝母 | Zhe Bei Mu
+F63, 珍珠母 | Zhen Zhu Mu
+D61, 炙草乌 | Zhi Cao Wu
 E21, 炙甘草 | Zhi Gan Cao
-C72, 枳壳 | Zhi Ke
-C33, 知母 | Zhi Mu
+E12, 炙黄芪 | Zhi Huang Qi
+C11, 炙麻黄 | Zhi Ma Huang
+B22, 枳壳 | Zhi Ke
+C75, 知母 | Zhi Mu
 B23, 枳实 | Zhi Shi
-A64, 猪苓 | Zhu Ling
-A24, 竹茹 | Zhu Ru
-E42, 竹叶 | Zhu Ye
-B27, 紫草 | Zi Cao
-G64, 紫苏叶 | Zi Su Ye
-D62, 紫苏子 | Zi Su Zi
+C44, 栀子 | Zhi Zi
+A63, 猪苓 | Zhu Ling
+D25, 竹茹 | Zhu Ru
+A41, 紫草 | Zi Cao
+G64, 自然铜 | Zi Ran Tong
+B32, 紫苏梗 | Zi Su Geng
+C33, 紫苏叶 | Zi Su Ye
+D64, 紫苏子 | Zi Su Zi
+D34, 紫菀 | Zi Wan
