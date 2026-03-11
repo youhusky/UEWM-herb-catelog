@@ -10,6 +10,7 @@
 
 - 支持中文名、拼音和英文别名匹配
 - 支持单味药、多味药和整段方子输入
+- 整段方子智能解析（增强版）即将推出
 - 输出对应药材编号和克数
 - 可在手机浏览器直接使用
 
@@ -44,6 +45,7 @@ An internal web tool for [UEWM Clinic](https://www.uewmclinic.com/) interns to m
 
 - Supports Chinese names, pinyin, and English aliases
 - Supports single herb input, multiple herbs, or full mixed prescription text
+- Enhanced full-prescription parsing is coming soon
 - Outputs mapped herb code and weight
 - Mobile browser friendly
 
