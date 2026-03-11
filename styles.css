@@ -148,6 +148,11 @@
         color: var(--accent-strong);
       }
 
+      .sort-btn.active {
+        background: var(--accent-strong);
+        color: #fffaf2;
+      }
+
       .status {
         margin-top: 14px;
         font-size: 14px;

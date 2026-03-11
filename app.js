@@ -5,20 +5,93 @@ const prescriptionInput = document.getElementById("prescriptionInput");
 const resultBox = document.getElementById("resultBox");
 const statusText = document.getElementById("statusText");
 const countPill = document.getElementById("countPill");
+const sortDefaultBtn = document.getElementById("sortDefaultBtn");
+const sortAscBtn = document.getElementById("sortAscBtn");
 
 const DEFAULT_MAPPING = "拼音 (Pinyin),编码 (Code),中文名 (Chinese Name),备注 (Notes)";
 const MAPPING_DATA_URL = "./herb-mapping.txt";
 let loadedMappingText = DEFAULT_MAPPING;
+let currentSortMode = "default";
+let lastItems = [];
+let lastUnmatched = [];
 
 const DEFAULT_PRESCRIPTION = `白术 10克
 土茯苓 12克
 陈皮 6克
 
-或直接输入：
 白术 土茯苓 陈皮
 
-或整段输入：
 Bai Zhu 10g Chen Pi 6g`;
+
+function normalizeCodeForSort(code) {
+  const match = code.match(/^([A-Z])(\d+)$/i);
+  if (!match) return { group: "Z", num: Number.MAX_SAFE_INTEGER };
+  return { group: match[1].toUpperCase(), num: Number(match[2]) };
+}
+
+function compareByCodeAsc(a, b) {
+  const codeA = a.code || "";
+  const codeB = b.code || "";
+  if (!codeA && !codeB) return 0;
+  if (!codeA) return 1;
+  if (!codeB) return -1;
+
+  const na = normalizeCodeForSort(codeA);
+  const nb = normalizeCodeForSort(codeB);
+  if (na.group !== nb.group) return na.group.localeCompare(nb.group);
+  if (na.num !== nb.num) return na.num - nb.num;
+  return 0;
+}
+
+function renderFromState() {
+  if (!lastItems.length) {
+    resultBox.textContent = "没有识别到有效方子内容";
+    statusText.textContent = "请输入药材名称，可带克数，也可以直接输入整段方子。";
+    statusText.className = "status warn";
+    countPill.textContent = "已匹配 0 味";
+    return;
+  }
+
+  const displayItems =
+    currentSortMode === "asc"
+      ? [...lastItems].sort(compareByCodeAsc)
+      : [...lastItems];
+
+  const matched = displayItems.map((item) => {
+    if (!item.code) {
+      return item.amount
+        ? `${item.rawName} 无编号 ${item.amount}克`
+        : `${item.rawName} 无编号`;
+    }
+    return item.amount ? `${item.code} ${item.amount}克` : `${item.code} 未写克数`;
+  });
+
+  const sections = [];
+  if (matched.length) {
+    sections.push(matched.join("\n"));
+  }
+  if (lastUnmatched.length) {
+    sections.push(`未匹配药材：\n${lastUnmatched.join("\n")}`);
+  }
+
+  resultBox.textContent = sections.join("\n\n");
+  countPill.textContent = `已匹配 ${matched.length} 味`;
+
+  if (lastUnmatched.length) {
+    statusText.textContent = `有 ${lastUnmatched.length} 味药未找到编号，请补充编号表。`;
+    statusText.className = "status warn";
+  } else {
+    statusText.textContent = `已完成转换，共 ${matched.length} 味药。`;
+    statusText.className = "status ok";
+  }
+}
+
+function setSortMode(mode) {
+  currentSortMode = mode;
+  sortDefaultBtn.classList.toggle("active", mode === "default");
+  sortAscBtn.classList.toggle("active", mode === "asc");
+  renderFromState();
+}
 
 function renderResult() {
   const { aliasMap, aliases, matcher } = parseMapping(mappingInput.value);
@@ -29,44 +102,14 @@ function renderResult() {
     matcher
   );
 
-  const matched = items.map((item) => {
-    if (!item.code) {
-      return item.amount
-        ? `${item.rawName} 无编号 ${item.amount}克`
-        : `${item.rawName} 无编号`;
-    }
-    return item.amount ? `${item.code} ${item.amount}克` : `${item.code} 未写克数`;
-  });
-
-  if (!items.length) {
-    resultBox.textContent = "没有识别到有效方子内容";
-    statusText.textContent = "请输入药材名称，可带克数，也可以直接输入整段方子。";
-    statusText.className = "status warn";
-    countPill.textContent = "已匹配 0 味";
-    return;
-  }
-
-  const sections = [];
-  if (matched.length) {
-    sections.push(matched.join("\n"));
-  }
-  if (unmatched.length) {
-    sections.push(`未匹配药材：\n${unmatched.join("\n")}`);
-  }
-
-  resultBox.textContent = sections.join("\n\n");
-  countPill.textContent = `已匹配 ${matched.length} 味`;
-
-  if (unmatched.length) {
-    statusText.textContent = `有 ${unmatched.length} 味药未找到编号，请补充编号表。`;
-    statusText.className = "status warn";
-  } else {
-    statusText.textContent = `已完成转换，共 ${matched.length} 味药。`;
-    statusText.className = "status ok";
-  }
+  lastItems = items;
+  lastUnmatched = unmatched;
+  renderFromState();
 }
 
 document.getElementById("convertBtn").addEventListener("click", renderResult);
+sortDefaultBtn.addEventListener("click", () => setSortMode("default"));
+sortAscBtn.addEventListener("click", () => setSortMode("asc"));
 
 document.getElementById("copyBtn").addEventListener("click", async () => {
   const text = resultBox.textContent.trim();
@@ -122,6 +165,7 @@ async function loadMappingData() {
 async function initializePage() {
   await loadMappingData();
   prescriptionInput.value = DEFAULT_PRESCRIPTION;
+  setSortMode("default");
   renderResult();
 }
 
