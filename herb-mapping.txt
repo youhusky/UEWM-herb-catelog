@@ -166,7 +166,6 @@ C11, 麻黄 | Ma Huang
 H46, 麻黄根 | Ma Huang Gen
 D74, 马兜铃 | Ma Dou Ling
 E33, 麦冬 | 麦门冬 | Mai Dong
-H13, 麦芽 | Mai Ya
 A13, 芒硝 | Mang Xiao
 H34, 玫瑰花 | Mei Gui Hua
 F65, 没药 | Mo Yao
@@ -174,8 +173,8 @@ H42, 密蒙花 | Mi Meng Hua
 A61, 牡丹皮 | Mu Dan Pi
 D41, 木瓜 | Mu Gua
 F53, 牡蛎 | Mu Li
-A44, 木香 | Mu Xiang
-A56, 麦芽 | Mai Ya
+A44, 木通 | Mu Tong
+A56, 炒麦芽 | 麦芽 | Chao Mai Ya | Mai Ya
 B42, 木香 | Mu Xiang
 C13, 木贼 | Mu Zei
 E55, 女贞子 | Nu Zhen Zi
@@ -193,7 +192,7 @@ D52, 千年健 | Qian Nian Jian
 F22, 芡实 | Qian Shi
 C32, 羌活 | Qiang Huo
 D42, 秦艽 | Qin Jiao
-D72, 秦皮 | Qing Pi
+D72, 秦皮 | Qin Pi
 H41, 青葙子 | Qing Xiang Zi
 A11, 青蒿 | Qing Hao
 B21, 青皮 | Qing Pi
