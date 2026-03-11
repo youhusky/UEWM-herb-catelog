@@ -45,15 +45,25 @@ function editDistance(a, b) {
   return dp[m][n];
 }
 
-function findFuzzyAlias(rawName, aliases, aliasMap) {
+function buildAliasCandidates(aliases) {
+  return aliases.map((alias) => ({
+    alias,
+    normalized: normalizeName(alias)
+  }));
+}
+
+function findFuzzyAlias(rawName, aliasCandidates, aliasMap) {
   const target = normalizeName(rawName);
   if (!target) return null;
   let best = null;
   let bestScore = Infinity;
+  const firstChar = target[0] || "";
 
-  aliases.forEach((alias) => {
-    const normalizedAlias = normalizeName(alias);
+  aliasCandidates.forEach(({ normalized }) => {
+    const normalizedAlias = normalized;
     if (!normalizedAlias) return;
+    if (Math.abs(normalizedAlias.length - target.length) > 2) return;
+    if (firstChar && normalizedAlias[0] !== firstChar) return;
     const distance = editDistance(target, normalizedAlias);
     if (distance < bestScore) {
       bestScore = distance;
@@ -121,13 +131,14 @@ export function parseMapping(text) {
   return {
     aliasMap,
     aliases: uniqueAliases,
+    aliasCandidates: buildAliasCandidates(uniqueAliases),
     matcher: pattern
       ? new RegExp(`(${pattern})\\s*[:：]?\\s*(\\d+(?:\\.\\d+)?)?\\s*(?:g|G|克)?`, "gi")
       : null
   };
 }
 
-export function extractPrescriptionItems(text, aliasMap, aliases, matcher) {
+export function extractPrescriptionItems(text, aliasMap, aliasCandidates, matcher) {
   if (!matcher) {
     return { items: [], unmatched: [] };
   }
@@ -140,7 +151,7 @@ export function extractPrescriptionItems(text, aliasMap, aliases, matcher) {
     const amount = match[2] ? match[2].trim() : "";
     const name = normalizeName(rawName);
     const mapped = aliasMap.get(name);
-    const fuzzyMapped = mapped || findFuzzyAlias(rawName, aliases, aliasMap);
+    const fuzzyMapped = mapped || findFuzzyAlias(rawName, aliasCandidates, aliasMap);
     if (!fuzzyMapped) continue;
 
     items.push({

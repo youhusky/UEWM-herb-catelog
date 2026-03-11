@@ -14,6 +14,8 @@ let loadedMappingText = DEFAULT_MAPPING;
 let currentSortMode = "default";
 let lastItems = [];
 let lastUnmatched = [];
+let lastParsedMappingText = "";
+let lastParsedMapping = null;
 
 const DEFAULT_PRESCRIPTION = `白术 10克
 土茯苓 12克
@@ -94,11 +96,17 @@ function setSortMode(mode) {
 }
 
 function renderResult() {
-  const { aliasMap, aliases, matcher } = parseMapping(mappingInput.value);
+  const mappingText = mappingInput.value;
+  if (mappingText !== lastParsedMappingText || !lastParsedMapping) {
+    lastParsedMapping = parseMapping(mappingText);
+    lastParsedMappingText = mappingText;
+  }
+
+  const { aliasMap, aliasCandidates, matcher } = lastParsedMapping;
   const { items, unmatched } = extractPrescriptionItems(
     prescriptionInput.value,
     aliasMap,
-    aliases,
+    aliasCandidates,
     matcher
   );
 
