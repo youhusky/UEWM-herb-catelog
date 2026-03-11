@@ -4,214 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UEWM Intern 中药拿药编号工具</title>
-    <style>
-      :root {
-        --bg: #f6efe4;
-        --paper: #fffaf2;
-        --panel: #f0e4d2;
-        --ink: #2f2419;
-        --muted: #776554;
-        --accent: #8b5e34;
-        --accent-strong: #6d4521;
-        --line: #d6c1a8;
-        --warn: #a1452f;
-        --ok: #2f6b3d;
-        --shadow: 0 18px 40px rgba(77, 49, 20, 0.12);
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        margin: 0;
-        font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
-          sans-serif;
-        color: var(--ink);
-        background:
-          radial-gradient(circle at top left, rgba(139, 94, 52, 0.18), transparent 28%),
-          radial-gradient(circle at bottom right, rgba(109, 69, 33, 0.16), transparent 24%),
-          linear-gradient(135deg, #f8f1e7, #f4eadb 45%, #efe1cd);
-        min-height: 100vh;
-      }
-
-      .shell {
-        width: min(1180px, calc(100vw - 32px));
-        margin: 32px auto;
-      }
-
-      .hero {
-        background: linear-gradient(135deg, rgba(255, 250, 242, 0.92), rgba(240, 228, 210, 0.9));
-        border: 1px solid rgba(139, 94, 52, 0.15);
-        border-radius: 28px;
-        box-shadow: var(--shadow);
-        padding: 28px;
-      }
-
-      .eyebrow {
-        display: inline-flex;
-        align-items: center;
-        padding: 6px 12px;
-        border-radius: 999px;
-        background: rgba(139, 94, 52, 0.1);
-        color: var(--accent-strong);
-        font-size: 13px;
-        letter-spacing: 0.08em;
-      }
-
-      h1 {
-        margin: 14px 0 10px;
-        font-size: clamp(30px, 5vw, 52px);
-        line-height: 1.05;
-      }
-
-      .subhead {
-        margin: 0;
-        max-width: 760px;
-        color: var(--muted);
-        font-size: 16px;
-        line-height: 1.7;
-      }
-
-      .grid {
-        display: grid;
-        grid-template-columns: 1.1fr 1.1fr 0.9fr;
-        gap: 18px;
-        margin-top: 24px;
-      }
-
-      .card {
-        background: rgba(255, 250, 242, 0.92);
-        border: 1px solid var(--line);
-        border-radius: 24px;
-        padding: 20px;
-        box-shadow: var(--shadow);
-      }
-
-      h2 {
-        margin: 0 0 8px;
-        font-size: 20px;
-      }
-
-      .hint {
-        margin: 0 0 14px;
-        color: var(--muted);
-        font-size: 14px;
-        line-height: 1.6;
-      }
-
-      .hint a {
-        color: var(--accent-strong);
-        font-weight: 600;
-      }
-
-      textarea {
-        width: 100%;
-        min-height: 320px;
-        padding: 16px;
-        border: 1px solid var(--line);
-        border-radius: 18px;
-        resize: vertical;
-        background: rgba(255, 255, 255, 0.72);
-        color: var(--ink);
-        font: inherit;
-        line-height: 1.7;
-      }
-
-      textarea:focus {
-        outline: 2px solid rgba(139, 94, 52, 0.25);
-        border-color: var(--accent);
-      }
-
-      .actions {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-        margin-top: 14px;
-      }
-
-
-      button {
-        appearance: none;
-        border: 0;
-        border-radius: 999px;
-        padding: 12px 18px;
-        font: inherit;
-        cursor: pointer;
-        transition: transform 160ms ease, opacity 160ms ease, background 160ms ease;
-      }
-
-      button:hover {
-        transform: translateY(-1px);
-      }
-
-      .primary {
-        background: var(--accent);
-        color: #fffaf2;
-      }
-
-      .secondary {
-        background: rgba(139, 94, 52, 0.1);
-        color: var(--accent-strong);
-      }
-
-      .status {
-        margin-top: 14px;
-        font-size: 14px;
-        min-height: 22px;
-      }
-
-      .status.ok {
-        color: var(--ok);
-      }
-
-      .status.warn {
-        color: var(--warn);
-      }
-
-      .output-box {
-        min-height: 190px;
-        border-radius: 18px;
-        border: 1px dashed var(--line);
-        background: rgba(255, 255, 255, 0.6);
-        padding: 16px;
-        white-space: pre-wrap;
-        line-height: 1.8;
-      }
-
-      .meta {
-        display: grid;
-        gap: 12px;
-        margin-top: 16px;
-      }
-
-      .pill {
-        display: inline-flex;
-        width: fit-content;
-        padding: 7px 12px;
-        border-radius: 999px;
-        background: rgba(109, 69, 33, 0.08);
-        color: var(--accent-strong);
-        font-size: 13px;
-      }
-
-      ul {
-        margin: 8px 0 0;
-        padding-left: 18px;
-        color: var(--muted);
-        line-height: 1.7;
-      }
-
-      @media (max-width: 980px) {
-        .grid {
-          grid-template-columns: 1fr;
-        }
-
-        textarea {
-          min-height: 220px;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <main class="shell">
@@ -227,7 +20,7 @@
         <article class="card">
           <h2>药材编号表</h2>
           <p class="hint">
-            每行一个编号，支持多个别名。格式：`编号, 中文名 | 拼音/英文名 | 其他别名`
+            默认读取独立数据文件 `herb-mapping.txt`。每行一个编号，支持多个别名，格式：`编号, 中文名 | 拼音/英文名 | 其他别名`
           </p>
           <textarea id="mappingInput"></textarea>
           <div class="actions">
@@ -286,216 +79,9 @@
       const resultBox = document.getElementById("resultBox");
       const statusText = document.getElementById("statusText");
       const countPill = document.getElementById("countPill");
-      const DEFAULT_MAPPING = `B34, 艾绒 | Ai Rong
-B24, 艾叶 | Ai Ye
-E35, 巴戟天 | 四块瓦 | Ba Ji Tian
-B75, 白附片 | Bai Fu Pian
-E11, 白扁豆 | Bai Bian Dou
-B41, 百部 | Bai Bu
-G13, 白豆蔻 | Bai Dou Kou
-D75, 白果 | Bai Guo
-E43, 百合 | Bai He
-D13, 白花蛇舌草 | Bai Hua She She Cao
-B66, 白及 | Bai Ji
-G41, 白蒺藜 | Bai Ji Li
-C25, 败酱草 | Bai Jiang Cao
-D54, 白芥子 | Bai Jie Zi
-B14, 白茅根 | Bai Mao Gen
-D65, 白前 | Bai Qian
-E42, 白芍 | Bai Shao
-H15, 白头翁 | Bai Tou Weng
-A42, 白薇 | Bai Wei
-G44, 白鲜皮 | Bai Xian Pi
-C41, 白芷 | Bai Zhi
-E61, 白术 | Bai Zhu
-F52, 柏子仁 | Bai Zi Ren
-C56, 板蓝根 | Ban Lan Gen
-D44, 半夏 | Ban Xia
-D14, 半枝莲 | Ban Zhi Lian
-北杏仁 | Bei Xing Ren
-B74, 荜茇 | Bi Ba
-A35, 萆薢 | Bi Xie
-E66, 萹蓄 | Bian Xu
-A26, 鳖甲 | Bie Jia
-C63, 薄荷 | Bo He
-E46, 补骨脂 | Bu Gu Zhi
-C51, 苍耳子 | Cang Er Zi
-G32, 苍术 | Cang Zhu
-D61, 草乌 | Cao Wu
-G23, 草豆蔻 | Cao Dou Kou
-G33, 草果 | Cao Guo
-B25, 侧柏叶 | Ce Bai Ye
-C53, 柴胡 | Chai Hu
-C52, 蝉蜕 | Chan Tui
-A55, 车前草 | Che Qian Cao
-A64, 车前子 | Che Qian Zi
-B14, 陈皮 | Chen Pi
-B33, 沉香 | Chen Xiang
-F35, 赤芍 | Chi Shao
-F71, 赤石脂 | Chi Shi Zhi
-G25, 茺蔚子 | Chong Wei Zi
-D46, 川贝母 | Chuan Bei Mu
-B43, 川楝子 | Chuan Lian Zi
-F55, 川木通 | Chuan Mu Tong
-D71, 川牛膝 | Chuan Niu Xi
-H56, 川芎 | Chuan Xiong
-E25, 大腹皮 | Da Fu Pi
-A22, 大黄 | Da Huang
-G14, 大青叶 | Da Qing Ye
-C43, 代赭石 | Dai Zhe Shi
-C16, 胆南星 | Dan Nan Xing
-F24, 党参 | Dang Shen
-E72, 当归 | 當歸 | Dang Gui
-F61, 灯心草 | Deng Xin Cao
-B73, 丁香 | Ding Xiang
-E25, 冬瓜子 | Dong Gua Zi
-H51, 冬瓜皮 | Dong Gua Pi
-A22, 独活 | Du Huo
-E64, 杜仲 | Du Zhong
-E66, 莪术 | E Zhu
-A23, 防风 | Fang Feng
-C22, 浮小麦 | Fu Xiao Mai
-A73, 附片 | Fu Zi | Fu Pian
-A15, 甘草 | Gan Cao
-E31, 干姜 | Gan Jiang
-G24, 葛根 | Ge Gen
-F31, 藁本 | Gao Ben
-B23, 钩藤 | Gou Teng
-E24, 瓜蒌 | Gua Lou
-C66, 桂枝 | Gui Zhi
-B51, 海螵蛸 | Hai Piao Xiao
-D12, 海桐皮 | Hai Tong Pi
-A73, 汉防己 | Han Fang Ji
-B45, 墨旱莲 | Han Lian Cao | Mo Han Lian
-E12, 何首乌 | He Shou Wu
-F44, 诃子 | He Zi
-红枣 | Hong Zao
-B63, 厚朴 | Hou Po
-C43, 琥珀 | Hu Po
-H12, 胡桃仁 | Hu Tao Ren
-B46, 槐花米 | Huai Hua Mi
-B44, 花椒 | Hua Jiao
-C42, 黄柏 | Huang Bai
-E13, 黄连 | Huang Lian
-C12, 黄精 | Huang Jing
-E43, 黄芪 | Huang Qi
-E32, 黄芩 | Huang Qin
-G46, 火麻仁 | Huo Ma Ren
-H14, 鸡骨草 | Ji Gu Cao
-H24, 鸡内金 | Ji Nei Jin
-B45, 鸡血藤 | Ji Xue Teng
-C73, 金银花 | Jin Yin Hua
-E26, 韭菜子 | Jiu Cai Zi
-G53, 荆芥穗 | Jing Jie Sui
-A36, 莱菔子 | Lai Fu Zi
-F32, 莲子 | Lian Zi
-G72, 硫磺 | Liu Huang
-F43, 龙胆草 | Long Dan Cao
-D43, 龙骨 | Long Gu
-C24, 芦根 | Lu Gen
-B32, 鹿角胶 | Lu Jiao Jiao
-H52, 刘寄奴 | Liu Ji Nu
-F26, 罗汉果 | Luo Han Guo
-G22, 络石藤 | Luo Shi Teng
-H33, 路路通 | Lu Lu Tong
-D74, 马兜铃 | Ma Dou Ling
-H46, 麦冬 | Mai Dong
-H13, 麦芽 | Mai Ya
-G63, 芒硝 | Mang Xiao
-H42, 密蒙花 | Mi Meng Hua
-D64, 绵萆薢 | Mian Bi Xie
-E73, 牡丹皮 | Mu Dan Pi
-B44, 木瓜 | Mu Gua
-B44, 木香 | Mu Xiang
-E57, 女贞子 | Nu Zhen Zi
-B53, 牛蒡子 | Niu Bang Zi
-G54, 牛膝 | Niu Xi
-G32, 胖大海 | Pang Da Hai
-G23, 佩兰 | Pei Lan
-A33, 蒲公英 | Pu Gong Ying
-D61, 前胡 | Qian Hu
-D73, 秦艽 | Qin Jiao
-B22, 青皮 | Qing Pi
-H41, 青葙子 | Qing Xiang Zi
-B74, 瞿麦 | Qu Mai
-E73, 人参 | Ren Shen
-E25, 肉苁蓉 | 大云 | Rou Cong Rong | Da Yun
-G74, 牵牛子 | 二丑牛 | Qian Niu Zi | Er Chou Niu
-F44, 肉豆蔻 | Rou Dou Kou
-B34, 乳香 | Ru Xiang
-F75, 三棱 | San Leng
-B35, 桑白皮 | Sang Bai Pi
-E74, 桑寄生 | Sang Ji Sheng
-E73, 桑椹 | Sang Shen
-D22, 桑叶 | Sang Ye
-A71, 生地黄 | 生地黃 | 生地 | Sheng Di Huang | Sheng Di
-B63, 砂仁 | Sha Ren
-E63, 山药 | Shan Yao
-A46, 山楂 | Shan Zha
-E43, 蛇床子 | She Chuang Zi
-F74, 石菖蒲 | Shi Chang Pu
-C54, 石膏 | Shi Gao
-G34, 石斛 | Shi Hu
-G31, 石决明 | Shi Jue Ming
-A47, 石榴皮 | Shi Liu Pi
-G31, 石苇 | Shi Wei
-E53, 熟地黄 | 熟地黃 | 熟地 | Shu Di Huang | Shu Di
-F44, 酸枣仁 | Suan Zao Ren
-C55, 水牛角 | Shui Niu Jiao
-G15, 天花粉 | Tian Hua Fen
-H53, 太子参 | 太子汤 | Tai Zi Shen | Tai Zi Tang
-E23, 天门冬 | Tian Men Dong
-C53, 天竺黄 | Tian Zhu Huang
-H31, 通草 | Tong Cao
-G76, 土鳖虫 | Tu Bie Chong
-H32, 土茯苓 | Tu Fu Ling
-H35, 土槿皮 | Tu Jin Pi
-H45, 菟丝子 | Tu Si Zi
-H46, 瓦楞子 | Wa Leng Zi
-D72, 王不留行 | Wang Bu Liu Xing
-F71, 威灵仙 | Wei Ling Xian
-G66, 五加皮 | Wu Jia Pi
-G66, 五倍子 | Wu Bei Zi
-A53, 乌梅 | Wu Mei
-G75, 五灵脂 | Wu Ling Zhi
-F21, 五味子 | Wu Wei Zi
-B31, 乌药 | Wu Yao
-B64, 吴茱萸 | Wu Zhu Yu
-D22, 豨莶草 | Xi Xian Cao
-C61, 薤白 | Xie Bai
-C35, 夏枯草 | Xia Ku Cao
-B33, 仙鹤草 | Xian He Cao
-E35, 仙茅 | Xian Mao
-B52, 香附 | Xiang Fu
-B12, 香薷 | Xiang Ru
-B72, 小茴香 | Xiao Hui Xiang
-C42, 辛夷花 | Xin Yi Hua
-E32, 徐长卿 | Xu Chang Qing
-A51, 玄参 | Xuan Shen
-H43, 阳起石 | Yang Qi Shi
-G24, 野菊花 | Ye Ju Hua
-A54, 益母草 | Yi Mu Cao
-F14, 薏苡仁 | Yi Yi Ren
-A25, 茵陈 | Yin Chen
-B75, 禹白附 | Yu Bai Fu
-G34, 郁李仁 | Yu Li Ren
-H23, 玉竹 | Yu Zhu
-E53, 远志 | Yuan Zhi
-A53, 泽兰 | Ze Lan
-A35, 泽泻 | Ze Xie
-E43, 浙贝母 | Zhe Bei Mu
-D61, 珍珠母 | Zhen Zhu Mu
-E21, 炙甘草 | Zhi Gan Cao
-C72, 枳壳 | Zhi Ke
-C33, 知母 | Zhi Mu
-B23, 枳实 | Zhi Shi
-A64, 猪苓 | Zhu Ling
-A24, 竹茹 | Zhu Ru
-E42, 竹叶 | Zhu Ye
-B27, 紫草 | Zi Cao
-G64, 紫苏叶 | Zi Su Ye
-D62, 紫苏子 | Zi Su Zi
-D34, 紫苑 | Zi Wan`;
+      const DEFAULT_MAPPING = "拼音 (Pinyin),编码 (Code),中文名 (Chinese Name),备注 (Notes)";
+      const MAPPING_DATA_URL = "./herb-mapping.txt";
+      let loadedMappingText = DEFAULT_MAPPING;
       const DEFAULT_PRESCRIPTION = `白术 10克
 土茯苓 12克
 陈皮 6克
@@ -741,7 +327,7 @@ Bai Zhu 10g Chen Pi 6g`;
       });
 
       document.getElementById("fillDemoBtn").addEventListener("click", () => {
-        mappingInput.value = DEFAULT_MAPPING;
+        mappingInput.value = loadedMappingText;
       });
 
       document.getElementById("clearMappingBtn").addEventListener("click", () => {
@@ -758,9 +344,28 @@ Bai Zhu 10g Chen Pi 6g`;
         statusText.className = "status";
       });
 
-      mappingInput.value = DEFAULT_MAPPING;
-      prescriptionInput.value = DEFAULT_PRESCRIPTION;
-      renderResult();
+      async function loadMappingData() {
+        try {
+          const response = await fetch(MAPPING_DATA_URL, { cache: "no-store" });
+          if (response.ok) {
+            const text = await response.text();
+            if (text.trim()) {
+              loadedMappingText = text;
+            }
+          }
+        } catch (error) {
+          // Keep DEFAULT_MAPPING fallback when file loading is unavailable.
+        }
+        mappingInput.value = loadedMappingText;
+      }
+
+      async function initializePage() {
+        await loadMappingData();
+        prescriptionInput.value = DEFAULT_PRESCRIPTION;
+        renderResult();
+      }
+
+      initializePage();
     </script>
   </body>
 </html>
