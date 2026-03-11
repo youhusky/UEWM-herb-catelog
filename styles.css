@@ -66,11 +66,53 @@
         line-height: 1.7;
       }
 
-      .grid {
+      .primary-grid {
         display: grid;
-        grid-template-columns: 1.1fr 1.1fr 0.9fr;
+        grid-template-columns: 1fr 1fr;
         gap: 18px;
         margin-top: 24px;
+      }
+
+      .secondary-section {
+        margin-top: 16px;
+      }
+
+      .mapping-directory {
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: rgba(255, 250, 242, 0.92);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .mapping-directory summary {
+        list-style: none;
+        cursor: pointer;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 14px 16px;
+        color: var(--accent-strong);
+        font-weight: 700;
+        background: rgba(139, 94, 52, 0.08);
+      }
+
+      .mapping-directory summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .mapping-directory summary small {
+        font-size: 12px;
+        color: var(--muted);
+        font-weight: 500;
+      }
+
+      .mapping-card {
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        background: transparent;
       }
 
       .card {
@@ -201,7 +243,7 @@
       }
 
       @media (max-width: 980px) {
-        .grid {
+        .primary-grid {
           grid-template-columns: 1fr;
         }
 

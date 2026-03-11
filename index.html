@@ -16,19 +16,7 @@
         </p>
       </section>
 
-      <section class="grid">
-        <article class="card">
-          <h2>药材编号表</h2>
-          <p class="hint">
-            默认读取独立数据文件 `herb-mapping.txt`。每行一个编号，支持多个别名，格式：`编号, 中文名 | 拼音/英文名 | 其他别名`
-          </p>
-          <textarea id="mappingInput"></textarea>
-          <div class="actions">
-            <button class="secondary" id="fillDemoBtn">填入示例</button>
-            <button class="secondary" id="clearMappingBtn">清空编号表</button>
-          </div>
-        </article>
-
+      <section class="primary-grid">
         <article class="card">
           <h2>方子内容</h2>
           <p class="hint">
@@ -72,6 +60,25 @@
             </div>
           </div>
         </article>
+      </section>
+
+      <section class="secondary-section">
+        <details class="mapping-directory">
+          <summary>
+            <span>药材编号表（二级目录）</span>
+            <small>点击展开/收起</small>
+          </summary>
+          <article class="card mapping-card">
+            <p class="hint">
+              默认读取独立数据文件 `herb-mapping.txt`。每行一个编号，支持多个别名，格式：`编号, 中文名 | 拼音/英文名 | 其他别名`
+            </p>
+            <textarea id="mappingInput"></textarea>
+            <div class="actions">
+              <button class="secondary" id="fillDemoBtn">填入示例</button>
+              <button class="secondary" id="clearMappingBtn">清空编号表</button>
+            </div>
+          </article>
+        </details>
       </section>
     </main>
     <footer class="footer shell">
