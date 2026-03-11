@@ -130,6 +130,7 @@
         margin-top: 14px;
       }
 
+
       button {
         appearance: none;
         border: 0;
@@ -267,7 +268,7 @@
               <strong>支持说明</strong>
               <ul>
                 <li>自动识别 `g / 克 / G`</li>
-                <li>支持中文名和拼音/英文别名</li>
+                <li>支持简体/繁体中文名和拼音/英文别名</li>
                 <li>保留原始克数，不自动换算</li>
                 <li>支持单味药、多味药、整段方子连续输入</li>
                 <li>同名药材重复出现时会逐条输出</li>
@@ -343,6 +344,7 @@ G14, 大青叶 | Da Qing Ye
 C43, 代赭石 | Dai Zhe Shi
 C16, 胆南星 | Dan Nan Xing
 F24, 党参 | Dang Shen
+E72, 当归 | 當歸 | Dang Gui
 F61, 灯心草 | Deng Xin Cao
 B73, 丁香 | Ding Xiang
 E25, 冬瓜子 | Dong Gua Zi
@@ -425,6 +427,7 @@ B35, 桑白皮 | Sang Bai Pi
 E74, 桑寄生 | Sang Ji Sheng
 E73, 桑椹 | Sang Shen
 D22, 桑叶 | Sang Ye
+A71, 生地黄 | 生地黃 | 生地 | Sheng Di Huang | Sheng Di
 B63, 砂仁 | Sha Ren
 E63, 山药 | Shan Yao
 A46, 山楂 | Shan Zha
@@ -435,7 +438,7 @@ G34, 石斛 | Shi Hu
 G31, 石决明 | Shi Jue Ming
 A47, 石榴皮 | Shi Liu Pi
 G31, 石苇 | Shi Wei
-E53, 熟地黄 | Shu Di Huang
+E53, 熟地黄 | 熟地黃 | 熟地 | Shu Di Huang | Shu Di
 F44, 酸枣仁 | Suan Zao Ren
 C55, 水牛角 | Shui Niu Jiao
 G15, 天花粉 | Tian Hua Fen
@@ -629,6 +632,7 @@ Bai Zhu 10g Chen Pi 6g`;
       }
 
       document.getElementById("convertBtn").addEventListener("click", renderResult);
+
 
       document.getElementById("copyBtn").addEventListener("click", async () => {
         const text = resultBox.textContent.trim();
